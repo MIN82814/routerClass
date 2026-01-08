@@ -1,12 +1,22 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import Narbar from "./components/navbar.jsx";
+import Navbar from "./components/navbar.jsx";
+import {Routes,Route} from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 function App() {
   return (
     <>
-      <Narbar />
-      <div className="container mt-3">主要內容輸出地方</div>
+      <Navbar />
+      {/*把Routes加在輸出內容裡面，內層加入Route是對應一個個路徑*/}
+      <div className="container mt-3">
+<Routes>
+     {/*當進入到path路徑時，element要渲染哪個元件*/}
+<Route path="/" element={<Home/>}></Route>
+<Route path="/about" element={<About/>}></Route>
+</Routes>
+
+      </div>
     </>
   );
 }

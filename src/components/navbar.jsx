@@ -17,12 +17,12 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/about">
+              <Link className="nav-link" to="/about">
                 關於我
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/album">
+              <Link className="nav-link" to="/album">
                 相簿
               </Link>
             </li>

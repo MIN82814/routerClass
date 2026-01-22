@@ -1,10 +1,7 @@
-{
-  /*Outlet才可以透過路由來切換內容*/
-}
-{
-  /*先安裝axios套件再引入axios*/
-}
-import { Outlet } from "react-router-dom";
+// Outlet 才可以透過路由來切換內容
+// Link 可以來切換連結
+// 先安裝 axios 套件再引入 axios
+import { Outlet, Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -21,7 +18,7 @@ export default function AlbumLayout() {
   }
   useEffect(() => {
     (async () => {
-      const res = await axios.get(`${api}?client_id=${accessId}&query=animal;`);
+      const res = await axios.get(`${api}?client_id=${accessId}&query=animal`);
 
       const { results } = res.data;
       setList(results);
@@ -31,8 +28,15 @@ export default function AlbumLayout() {
     <div className="row">
       <div className="col-4">
         左側選單列表
+        <p>
+          <Link to="search">搜尋頁面</Link>
+        </p>
         {list.map((item) => {
-          return <li key={item.id}> {item.id}</li>;
+          return (
+            <li key={item.id}>
+              <Link to={item.id}>{item.id}</Link>
+            </li>
+          );
         })}
       </div>
       <div className="col-8">

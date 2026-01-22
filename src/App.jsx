@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import AlbumLayout from "./pages/AlbumLayout";
 import AlbumIndex from "./pages/AlbumIndex";
+import AlbumPhoto from "./pages/AlbumPhoto.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/album" element={<AlbumLayout />}>
             {/*path="index"改為index會是子路由預設指定的元件*/}
             <Route index element={<AlbumIndex />}></Route>
+            <Route></Route>
           </Route>
         </Routes>
       </div>
